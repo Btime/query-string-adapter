@@ -20,15 +20,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var DefaultOptions = {
-  field: 'body'
-};
-
 var QueryStringAdapter = function () {
-  function QueryStringAdapter(options) {
+  function QueryStringAdapter() {
     _classCallCheck(this, QueryStringAdapter);
-
-    this.options = Object.assign({}, options, DefaultOptions);
   }
 
   _createClass(QueryStringAdapter, [{
