@@ -6,11 +6,12 @@
   "scripts": {
     "test": "npm run lab",
     "lab": "lab -v test/*.test.js -T node_modules/lab-babel --leaks --timeout 555555",
-    "build": "babel ./src -d ./dist --presets es2015"
+    "build": "babel ./src -d ./dist --presets es2015",
+    "commit": "git commit -am \"Generate build\""
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm test"
+      "pre-push": "npm run build && npm run commit && npm test"
     }
   },
   "repository": {

@@ -5,7 +5,6 @@ import {
 import Joi from 'joi'
 import Schema from './schema'
 
-
 export default class QueryStringAdapter {
   _validate (data) {
     return Joi.validate(data, Schema, { abortEarly: false })
