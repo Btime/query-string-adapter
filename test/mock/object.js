@@ -5,6 +5,9 @@ export default {
     deleted: false,
     service_status_id: [1, 2]
   },
+  like: {
+    name: 'a'
+  },
   fields:
   {
     service: ['name'],
