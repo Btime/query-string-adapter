@@ -1,5 +1,5 @@
-# http-query-parser
-Parser fields into format 
+# query-string-adapter
+Format schema object to a string in JSON format and viceversa
 
 ## How to install
 `npm i Btime/query-string-adapter && yarn install`
