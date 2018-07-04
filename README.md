@@ -1,12 +1,33 @@
 # query-string-adapter
 Format schema object to a string in JSON format and viceversa
 
-## How to install
-`npm i Btime/query-string-adapter && yarn install`
+## Setup
+
+### Installing
+
+```bash
+npm i && yarn install
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+## Usage
+
+### How to install
+
+```bash
+npm i Btime/query-string-adapter && yarn install
+```
 
 ## Data Input
+
 ```js
 const QueryStringAdapter = require('query-string-adapter')
+
 const data = {
   filters:
   {
@@ -23,12 +44,21 @@ const data = {
   {
     page: 2,
     limit: 25
+  },
+  ordination:
+  {
+    field: 'name',
+    type: 'ASC'
   }
 }
+
 const parsed = QueryStringAdapter.parse(data)
 ```
+
 ## Data output
-- `parsed`
+
+- `parsed`:
+
 ```json
 {
     "filters":
@@ -46,6 +76,11 @@ const parsed = QueryStringAdapter.parse(data)
     {
         "page": 2,
         "limit": 25
+    },
+    "ordination":
+    {
+        "field": "name",
+        "type": "ASC"
     }
 }
 ```
