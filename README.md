@@ -6,7 +6,7 @@ Format schema object to a string in JSON format and viceversa
 ### Installing
 
 ```bash
-npm i && yarn install
+npm i
 ```
 
 ### Build
@@ -23,7 +23,11 @@ npm run build
 npm i Btime/query-string-adapter -S
 ```
 
-## Data Input
+## Examples
+
+### Parsing Object into String
+
+- **Input:**
 
 ```js
 const QueryStringAdapter = require('query-string-adapter')
@@ -48,16 +52,14 @@ const data = {
   ordination:
   {
     field: 'name',
-    type: 'ASC'
+    type: 'DESC'
   }
 }
 
 const parsed = QueryStringAdapter.parse(data)
 ```
 
-## Data output
-
-- `parsed`:
+- **Output:**
 
 ```json
 {
@@ -80,7 +82,47 @@ const parsed = QueryStringAdapter.parse(data)
     "ordination":
     {
         "field": "name",
-        "type": "ASC"
+        "type": "DESC"
     }
+}
+```
+
+### Parsing String into Object
+
+- **Input:**
+
+```js
+const QueryStringAdapter = require('query-string-adapter')
+
+const data = '{"filters":{"active":true,"deleted":false,"service_status_id":[1,2]},"fields":{"service":["name"],"service_type_id":"bank"},"paginate":{"page":2,"limit":25},"ordination":{"field":"name","type":"DESC"}}'
+
+const parsed = QueryStringAdapter.parse(data)
+```
+
+- **Output:**
+
+```js
+{
+  filters:
+  {
+    active: true,
+    deleted: false,
+    service_status_id: [1, 2]
+  },
+  fields:
+  {
+    service: ['name'],
+    service_type_id: 'bank'
+  },
+  paginate:
+  {
+    page: 2,
+    limit: 25
+  },
+  ordination:
+  {
+    field: 'name',
+    type: 'DESC'
+  }
 }
 ```
