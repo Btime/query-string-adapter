@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/Btime/query-string-adapter#readme",
   "dependencies": {
+    "btime-schema-validate-package": "github:Btime/btime-schema-validate-package",
     "code": "^5.2.0",
     "joi": "^13.1.2",
     "lab": "^15.4.1",

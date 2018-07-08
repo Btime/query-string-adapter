@@ -17,5 +17,10 @@ export default {
   {
     page: 2,
     limit: 25
+  },
+  ordination:
+  {
+    field: 'name',
+    type: 'DESC'
   }
 }

@@ -17,10 +17,10 @@ npm run build
 
 ## Usage
 
-### How to install
+### Installing
 
 ```bash
-npm i Btime/query-string-adapter && yarn install
+npm i Btime/query-string-adapter -S
 ```
 
 ## Data Input
