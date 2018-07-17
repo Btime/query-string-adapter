@@ -1,7 +1,7 @@
 export default {
   filters:
   {
-    active: true,
+    enabled: true,
     deleted: false,
     service_status_id: [1, 2]
   },
@@ -22,5 +22,6 @@ export default {
   {
     field: 'name',
     type: 'DESC'
-  }
+  },
+  likeOperator: 'and'
 }

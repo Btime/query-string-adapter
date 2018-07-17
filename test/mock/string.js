@@ -1,1 +1,1 @@
-export default '{"filters":{"active":true,"deleted":false,"service_status_id":[1,2]},"like":{"name":"a"},"fields":{"service":["name"],"service_type_id":"bank"},"paginate":{"page":2,"limit":25},"ordination":{"field":"name","type":"DESC"}}'
+export default '{"filters":{"enabled":true,"deleted":false,"service_status_id":[1,2]},"like":{"name":"a"},"fields":{"service":["name"],"service_type_id":"bank"},"paginate":{"page":2,"limit":25},"ordination":{"field":"name","type":"DESC"},"likeOperator":"and"}'
