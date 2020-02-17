@@ -1,4 +1,4 @@
-import * as BtimeSchemaValidatePackage from 'btime-schema-validate-package'
+import * as BtimeSchemaValidatePackage from '@btime/schema-validate'
 
 const validateSchema = BtimeSchemaValidatePackage.getSchema({
   name: 'request-options', method: 'query-string-adapter' })

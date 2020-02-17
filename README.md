@@ -20,7 +20,7 @@ npm run build
 ### Installing
 
 ```bash
-npm i Btime/query-string-adapter -S
+npm i @btime/query-string-adapter -S
 ```
 
 ## Examples
@@ -30,7 +30,7 @@ npm i Btime/query-string-adapter -S
 - **Input:**
 
 ```js
-const QueryStringAdapter = require('query-string-adapter')
+const QueryStringAdapter = require('@btime/query-string-adapter')
 
 const data = {
   filters:
@@ -92,7 +92,7 @@ const parsed = QueryStringAdapter.parse(data)
 - **Input:**
 
 ```js
-const QueryStringAdapter = require('query-string-adapter')
+const QueryStringAdapter = require('@btime/query-string-adapter')
 
 const data = '{"filters":{"active":true,"deleted":false,"service_status_id":[1,2]},"fields":{"service":["name"],"service_type_id":"bank"},"paginate":{"page":2,"limit":25},"ordination":{"field":"name","type":"DESC"}}'
 

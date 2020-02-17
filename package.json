@@ -1,5 +1,5 @@
 {
-  "name": "query-string-adapter",
+  "name": "@btime/query-string-adapter",
   "version": "1.0.0",
   "description": "Adapter to transform query string",
   "main": "index.js",
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Btime/query-string-adapter#readme",
   "dependencies": {
-    "btime-schema-validate-package": "github:Btime/btime-schema-validate-package#semver:^1",
+    "@btime/schema-validate": "^3.0.0",
     "code": "^5.2.0",
     "joi": "^13.1.2",
     "lab": "^15.4.1",
