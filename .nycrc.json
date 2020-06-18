@@ -1,0 +1,9 @@
+{
+    "check-coverage":true,
+    "lines": 80,
+    "reporter": [
+        "html",
+        "text"
+    ],
+    "include":["src"]
+}

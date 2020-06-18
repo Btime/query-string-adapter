@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "nyc --check-coverage --lines 90 --reporter=html --reporter=text mocha -r ts-node/register test/*.test.ts --exit",
-    "test-debugger": "mocha --inspect-brk -S -r ts-node/register test/*test.ts --exit --timeout 0",
+    "test": "nyc mocha -r ts-node/register test/*.test.ts --exit",
+    "test-debugger": "mocha --inspect-brk=9500 -S -r ts-node/register test/*test.ts --exit --timeout 0",
     "build": "./node_modules/typescript/bin/tsc",
     "prepush": "npm test",
     "lint": "./node_modules/eslint/bin/eslint.js 'src/**/*.{js,ts}' --fix ",

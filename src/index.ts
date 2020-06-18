@@ -2,6 +2,7 @@ import { isString, isObject } from 'lodash'
 
 import { Joi, getSchema } from '@btime/schema-validate'
 import { DefineErrorMessages } from '@btime/error-messages'
+import { ValidationResult } from '@hapi/joi'
 
 export class QueryStringAdapter {
   private defineErrorMessages: DefineErrorMessages
@@ -10,7 +11,7 @@ export class QueryStringAdapter {
     this.defineErrorMessages = defineErrorMessages
   }
 
-  _validate(data) {
+  _validate(data: unknown): ValidationResult {
     const Schema = getSchema(this.defineErrorMessages)({
       name: 'request-options',
       method: 'query-string-adapter',
@@ -19,7 +20,7 @@ export class QueryStringAdapter {
     return Joi.object(Schema.result).validate(data, { abortEarly: false })
   }
 
-  parseString(data) {
+  parseString(data: string): unknown {
     const result = JSON.parse(data)
     const isValid = this._validate(result)
 
@@ -30,7 +31,7 @@ export class QueryStringAdapter {
     return result
   }
 
-  parseObject(data) {
+  parseObject(data: unknown): string {
     const isValid = this._validate(data)
     if (isValid.error) {
       throw isValid.error
@@ -38,11 +39,9 @@ export class QueryStringAdapter {
     return JSON.stringify(data)
   }
 
-  parse(data) {
+  parse(data: unknown): string | unknown {
     if (!isString(data) && !isObject(data)) {
-      throw new Error(`
-        The data isn't a string or object
-      `)
+      throw new Error(`The data isn't a string or object`)
     }
 
     if (isString(data)) {

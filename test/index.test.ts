@@ -24,4 +24,10 @@ describe('QueryStringAdapter', () => {
     expect(typeof adapter).to.be.equal('string')
     expect(isEqual(adapter, MockString)).to.be.equal(true)
   })
+
+  it('Expect to throw an error on pass a non string/object value', () => {
+    expect(() => queryStringAdapter.parse(1)).to.throws(
+      `The data isn't a string or object`,
+    )
+  })
 })
