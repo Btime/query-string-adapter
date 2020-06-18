@@ -1,6 +1,6 @@
 {
   "name": "@btime/query-string-adapter",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Adapter to transform query string",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
