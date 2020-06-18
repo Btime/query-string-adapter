@@ -2,12 +2,17 @@
   "name": "@btime/query-string-adapter",
   "version": "2.0.0",
   "description": "Adapter to transform query string",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "npm run lab",
-    "lab": "lab -v test/*.test.js -T node_modules/lab-babel --leaks --timeout 555555",
-    "build": "babel ./src -d ./dist --presets es2015",
-    "commit": "git commit -am \"Generate build\""
+    "test": "nyc --check-coverage --lines 90 --reporter=html --reporter=text mocha -r ts-node/register test/*.test.ts --exit",
+    "test-debugger": "mocha --inspect-brk -S -r ts-node/register test/*test.ts --exit --timeout 0",
+    "build": "./node_modules/typescript/bin/tsc",
+    "prepush": "npm test",
+    "lint": "./node_modules/eslint/bin/eslint.js 'src/**/*.{js,ts}' --fix ",
+    "preversion": "npm run lint",
+    "prepublishOnly": "npm test && npm run lint",
+    "postversion": "git push && git push --tags"
   },
   "husky": {
     "hooks": {
@@ -33,24 +38,32 @@
   },
   "homepage": "https://github.com/Btime/query-string-adapter#readme",
   "dependencies": {
-    "@btime/schema-validate": "^3.0.0",
-    "code": "^5.2.0",
-    "joi": "^13.1.2",
-    "lab": "^15.4.1",
+    "@btime/schema-validate": "^4.1.0",
     "lodash": "^4.17.5",
     "qs": "^6.5.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "eslint": "^2.12.0",
-    "eslint-config-standard": "^5.3.1",
-    "eslint-plugin-promise": "^1.3.2",
-    "eslint-plugin-standard": "^1.3.2",
-    "husky": "^0.15.0-rc.8",
-    "lab-babel": "^1.1.1"
+    "@btime/error-messages": "^3.5.1",
+    "@types/chai": "^4.2.11",
+    "@types/hapi__joi": "^17.1.2",
+    "@types/lodash": "^4.14.155",
+    "@types/mocha": "^7.0.2",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
   }
 }
