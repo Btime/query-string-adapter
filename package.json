@@ -39,8 +39,7 @@
   "homepage": "https://github.com/Btime/query-string-adapter#readme",
   "dependencies": {
     "@btime/schema-validate": "^4.1.0",
-    "lodash": "^4.17.5",
-    "qs": "^6.5.1"
+    "lodash": "^4.17.5"
   },
   "devDependencies": {
     "@btime/error-messages": "^3.5.1",
